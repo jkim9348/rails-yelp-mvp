@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Edit <%= @restaurant.name %></h1>
+  <div><i class="fas fa-arrow-circle-left"></i> <%= link_to "Back", restaurant_path(@restaurant) %></div>
+  <%= simple_form_for(@restaurant) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address%>
+    <%= f.input :phone_number %>
+    <%= f.input :category %>
+    <%= f.submit class: "btn btn-primary" %>
+
+  <% end %>
+
+</div>

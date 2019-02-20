@@ -1,0 +1,19 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <p><%= link_to "Leave a review", new_restaurant_review_path(@restaurant) %></p>
+  <p><%= link_to "Edit this restaurant", edit_restaurant_path %></p>
+  <p>Address: <%= @restaurant.address %></p>
+  <p><%= @restaurant.phone_number %></p>
+  <p>Cuisine Type: <%= @restaurant.category %></p>
+
+  <div>
+    <% @restaurant.reviews.each do |review| %>
+  <div>
+    Rating: <%= review.rating %>
+    Review: <%= review.content %>
+  </div>
+    <% end %>
+  </div>
+
+  <div><i class="fas fa-arrow-circle-left"></i> <%= link_to "Back to all Restaurants", restaurants_path %></div>
+</div>
